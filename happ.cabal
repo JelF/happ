@@ -49,18 +49,30 @@ cabal-version:       >=1.10
 executable happ
   -- .hs or .lhs file containing the Main module.
   main-is: lib/main.hs
+  ghc-options: -Wall -threaded
 
   -- Modules included in this executable, other than Main.
-  -- other-modules:        App.Views.Home
+  other-modules:       App.Views.Home
+                      ,App.Views.Layout
+                      ,App.Controllers.News
+                      ,Config.Connection
+
+
 
   -- LANGUAGE extensions used by modules in this package.
-  other-extensions: OverloadedStrings, ScopedTypeVariables
+  other-extensions:  OverloadedStrings
+                    ,ScopedTypeVariables
+                    ,DeriveGeneric
 
   -- Other library packages from which modules are imported.
   build-depends:       base >=4.7 && <4.8
-                      ,happstack-lite
+                      ,happstack-server
                       ,blaze-html
                       ,process
+                      ,postgresql-simple
+                      ,postgresql-orm
+                      ,text
+                      ,mtl
 
   -- Directories containing source files.
   hs-source-dirs: .

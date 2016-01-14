@@ -3,7 +3,7 @@
 module App.Views.Home (index)
 where
 
-import Happstack.Lite
+import Happstack.Server
 import Text.Blaze.Html5
 import App.Views.Layout
 

@@ -6,7 +6,7 @@ where
 import Text.Blaze.Html5 ((!))
 import qualified Text.Blaze.Html5 as H
 import qualified Text.Blaze.Html5.Attributes as A
-import Happstack.Lite (toResponse, Response)
+import Happstack.Server (toResponse, Response)
 
 appLayout :: H.Html -> Response
 appLayout content = toResponse $
