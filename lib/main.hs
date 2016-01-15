@@ -11,7 +11,7 @@ happ :: ServerPart Response
 happ = msum
   [ dir "assets" assets
   , dir "static" static
-  , dir "news/" App.Controllers.News.routes
+  , dir "news" App.Controllers.News.routes
   , seeOther "/news/" $ toResponse "/news/" ]
 
 assets :: ServerPart Response
