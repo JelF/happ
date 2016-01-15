@@ -52,9 +52,7 @@ executable happ
   ghc-options: -Wall -threaded
 
   -- Modules included in this executable, other than Main.
-  other-modules:       App.Views.Home
-                      ,App.Views.Layout
-                      ,App.Controllers.News
+  other-modules:      App.Controllers.News
                       ,Config.Connection
 
 
@@ -73,9 +71,11 @@ executable happ
                       ,postgresql-orm
                       ,text
                       ,mtl
+                      ,transformers
+                      ,bytestring == 0.10.4.*
 
   -- Directories containing source files.
-  hs-source-dirs: .
+  hs-source-dirs: ., lib
 
   -- Base language which the package is written in.
   default-language:    Haskell2010

@@ -20,3 +20,8 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('public/assets'))
     .pipe(notify({ message: 'Styles task complete' }));
     });
+
+gulp.task('watch', ['styles'], function() {
+  // watch all source for rebuild
+  gulp.watch('./assets/**/*', ['styles']);
+});
