@@ -65,17 +65,18 @@ executable happ
                     ,TypeSynonymInstances
 
   -- Other library packages from which modules are imported.
-  build-depends:       base >=4.7 && <4.8
-                      ,happstack-server
-                      ,blaze-html
-                      ,blaze-markup
-                      ,process
-                      ,postgresql-simple
-                      ,postgresql-orm
-                      ,text
-                      ,mtl
-                      ,transformers
-                      ,bytestring == 0.10.4.*
+  build-depends:      base >=4.7 && <4.8
+                    , happstack-server
+                    , blaze-html
+                    , blaze-markup
+                    , process
+                    , postgresql-simple
+                    , postgresql-orm
+                    , text
+                    , mtl
+                    , transformers
+                    , hashmap
+                    , bytestring == 0.10.4.*
 
   -- Directories containing source files.
   hs-source-dirs: ., lib
@@ -92,17 +93,18 @@ test-suite spec
       ., lib, test
   main-is:
       Spec.hs
-  build-depends:
-      base    == 4.*
-    , hspec   == 2.*
-    , QuickCheck
-    ,happstack-server
-    ,blaze-html
-    ,blaze-markup
-    ,process
-    ,postgresql-simple
-    ,postgresql-orm
-    ,text
-    ,mtl
-    ,transformers
-    ,bytestring == 0.10.4.*
+  build-depends:    base    == 4.7.*
+                  , hspec   == 2.*
+                  , QuickCheck
+
+                  , happstack-server
+                  , blaze-html
+                  , blaze-markup
+                  , process
+                  , postgresql-simple
+                  , postgresql-orm
+                  , text
+                  , mtl
+                  , transformers
+                  , hashmap
+                  , bytestring == 0.10.4.*
