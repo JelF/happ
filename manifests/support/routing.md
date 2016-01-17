@@ -16,11 +16,12 @@ Implement a nice routing subsystem, which allows to
 ### Controller bindings
 Supposed API:  
 ```haskell
-bindRoute :: Route -> ServerPart Response -> ServerPart Response
-bindRoute "/" $ ok $ toResponse App.Views.Home.index
+bindRoute :: RouteSet -> ToRoute -> ServerPart Response -> ServerPart Response
+bindRoute set "/" $ ok $ toResponse App.Views.Home.index
 
-bindResource :: Route -> RouteSet ServerPart Response -> ServerPart Response
-bindResource "news" App.Controllers.News.routes
+bindResource :: RouteSet -> ToRoute -> (Route -> (ServerPart Response))
+ -> ServerPart Response
+bindResource set "news" App.Controllers.News.routes
 ```
 
 ### Link Generators
