@@ -1,0 +1,9 @@
+#!/bin/sh
+. `pwd`/test.envrc || exit 1
+dropdb $DATABASE_NAME
+set -e
+createdb $DATABASE_NAME
+pg_migrate init
+pg_migrate migrate
+
+cabal test

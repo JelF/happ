@@ -1,0 +1,5 @@
+language: haskell
+
+script: bin/test
+ghc:
+  - 7.8
