@@ -36,5 +36,4 @@ show :: News -> H.Html
 show news = appLayout $ toHtml $
   H.div ! A.class_ "news_standalone" $ do
     H.h1 ! A.class_ "news__title" $ toHtml $ News.title news
-    H.div ! A.class_ "news__content" $
-      H.preEscapedText $ News.content news
+    H.div ! A.class_ "news__content" $ News.content news

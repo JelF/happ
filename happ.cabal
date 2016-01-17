@@ -61,11 +61,13 @@ executable happ
   other-extensions:  OverloadedStrings
                     ,ScopedTypeVariables
                     ,DeriveGeneric
+                    ,TypeSynonymInstances
 
   -- Other library packages from which modules are imported.
   build-depends:       base >=4.7 && <4.8
                       ,happstack-server
                       ,blaze-html
+                      ,blaze-markup
                       ,process
                       ,postgresql-simple
                       ,postgresql-orm
