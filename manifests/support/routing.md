@@ -10,7 +10,7 @@ Implement a nice routing subsystem, which allows to
 * Implement `Route` type
 * Implement `RouteSet` type, basicaly `Data.HashMap Route (ServerPart Response)`
 * Implement `ToRoute` class
-* [bind controllers](#controller-bindigns)
+* [bind controllers](#controller-bindings)
 * [Get path to resource from any piece of code](#link-generators)
 
 ### Controller bindings
