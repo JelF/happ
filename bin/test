@@ -1,5 +1,5 @@
 #!/bin/sh
-source `pwd`/test.envrc || exit 1
+. `pwd`/test.envrc || exit 1
 dropdb $DATABASE_NAME
 set -e
 createdb $DATABASE_NAME
