@@ -23,6 +23,12 @@ instance Show Route where
       show' x [] = x
       show' x ys = x ++ " " ++ ys
 
+instance Ord Route where
+  compare (Route m1 a) (Route m2 b) = compare' (m1 `compare` m2) (a `compare` b)
+    where
+      compare' x EQ = x
+      compare' _ x  = x
+
 class ToRoute a where
   toRoute :: a -> Route
 

@@ -29,6 +29,9 @@ spec = do
     it "simple" $
       let m = singleton "news" e `union` singleton "users" e
       in toRoutes (RouteSet m) `shouldBe` [toRoute "news", toRoute "users"]
+    it "ordered" $
+      let m = singleton "users" e `union` singleton "news" e
+      in toRoutes (RouteSet m) `shouldBe` [toRoute "news", toRoute "users"]
     it "nested" $
       let m = RouteSet $ singleton "news" e
           m' = RouteSet $ singleton "admin" m

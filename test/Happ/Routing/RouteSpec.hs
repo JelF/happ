@@ -43,6 +43,13 @@ spec = do
       show (Route (Just POST) []) `shouldBe` "POST"
       show (Route (Just GET) ["news"]) `shouldBe` "GET news"
       show (Route (Just GET) ["news", "1"]) `shouldBe` "GET news/1"
+    describe "is an instance of Ord" $ do
+      it "obeys EQ => eq law" $ property $
+        \ x y ->
+          let _ = (x :: Route, y :: Route)
+          in (compare x y == EQ) == (x == y)
+      it "is reflexive" $ property $
+        \ x -> compare x (x :: Route) == EQ
 
   describe "toRoute" $ do
     it "converts Route" $ property $

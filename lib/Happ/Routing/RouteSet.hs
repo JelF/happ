@@ -9,7 +9,7 @@ import Control.Monad
 import Control.Monad.Writer
 import Control.Applicative
 import Data.HashMap as M
-import Data.List (intercalate)
+import Data.List (intercalate, sortBy)
 
 import Happ.Routing.Route
 
@@ -25,8 +25,9 @@ content_ :: RouteSet -> Map String RouteSet
 content_ (RouteSet x) = x
 
 toRoutes :: RouteSet -> [Route]
-toRoutes = toRoutes' . assocs . content_
+toRoutes = toRoutes' . sortBy cmp . assocs . content_
   where
+    cmp x y = fst x `compare` fst y
     toRoutes' :: [(String, RouteSet)] -> [Route]
     toRoutes' [] = []
     toRoutes' [(s, rs)] | M.null $ content_ rs  = [toRoute s]

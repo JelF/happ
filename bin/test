@@ -6,4 +6,4 @@ createdb $DATABASE_NAME
 pg_migrate init
 pg_migrate migrate
 
-cabal test
+cabal test --show-details=always
